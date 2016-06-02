@@ -1,20 +1,21 @@
 var React=require("react");
 
- var List=React.createClass({
-       render:function(){
-            var listItems=this.props.personList.map(function(item){
-                   return <li>
-                              <h1>{item.name}</h1>  
-                              <h3>{item.age}</h3>  
-                              <p>{item.email}</p>                        
-                            </li>   
-            });
-             return(
-                   <ul>
-                     {listItems}
-                   </ul>                                          
-              )
-       }
- });
+var List=React.createClass({
+     render:function(){
+         var listItems=this.props.personList.map(function(item){
+               return(<li key={item.name}>
+                         <h1>{item.name}</h1>
+                         <h2>{item.age}</h2>
+                       </li>
+               
+                     )
+         }) 
+         return(
+              <ul>
+                {listItems}
+               </ul>
+         )
+     }
+}); 
 
 module.exports=List;
